@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Covid-19 Tracker - NY Restrictions</title>
+    <meta name="description" content="Covid-19 Tracker New York Travel Restrictions">
+    <meta name="author" content="Justin Zhao">
+
+    <!-- styles css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- uikit css -->
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- uikit js -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+    <!-- heading -->
+    <div class="uk-container uk-container-small">
+        <div class="uk-section">
+            <div class="uk-block">
+                <h1 class="uk-heading-divider">Covid-19 Tracker by State</h1>
+                <p class="uk-text-large"> - Track New York travel restriction guidelines on each state.</p>
+                <p class="uk-text-large"> - Data from <a href="https://covidtracking.com/data/api">The COVID Tracking
+                        Project</a>.</p>
+                <p class="uk-text-large"> - Note: Table may not match up with NY Travel Restriction list of states;
+                    the restriction list is updated weekly, while the table is updated daily.</p>
+            </div>
+            <div class="uk-block">
+                <p class="uk-text-large"><strong>The criteria for NY 14-day quarantine are:</strong></p>
+                <p class="uk-text-large">&gt; 10 positive cases per day per 100k residents based on the 7
+                    day rolling count.</p>
+                <p class="uk-text-large">&gt; 10% positivity rate.</p>
+            </div>
+            <div class="uk-block">
+                <p class="uk-text-large"><strong>How to use tracker:</strong></p>
+                <p class="uk-text-large"> - The table will display the number of positive cases per day per 100k
+                    residents and the positivity rate.</p>
+                <p class="uk-text-large"> - If both numbers are below 10, then travelers from that state do not to
+                    quarantine.</p>
+                <p class="uk-text-large"> - The states that do not need to quarantine are shown in <span
+                        class="green">green</span>.
+                </p>
+                <p class="uk-text-large"> - The states that do need to quarantine are shown in <span
+                        class="red">red</span>.
+                </p>
+            </div>
+            <!-- table -->
+            <div class="uk-block">
+                <table class="uk-table uk-table-divider" id="table">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Cases/Day/100k</th>
+                            <th>Positivity Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- main js -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
