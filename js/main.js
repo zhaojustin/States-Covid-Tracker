@@ -31,7 +31,6 @@ async function getNumbers() {
                 var sevenDayCaseTotal = result[0].positiveIncrease+result[1].positiveIncrease+result[2].positiveIncrease+result[3].positiveIncrease+result[4].positiveIncrease+result[5].positiveIncrease+result[6].positiveIncrease;
                 sevenDayCases.push(sevenDayCaseTotal);
                 dailyCasesPer100k.push((sevenDayCaseTotal / populations[i] * 100000 / 7).toFixed(2));
-                if(states[i]=="Massachusetts") console.log(sevenDayCaseTotal)
 
                 //get positive cases
                 var positive = result[0].positive;
