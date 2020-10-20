@@ -20,6 +20,7 @@ var dailyCasesPer100k = [];
 var positivityRate = [];
 var needToQuarantine = [];
 var needToQuarantineStrings = [];
+var lastUpdated;
 
 async function getNumbers() {
     for(var i=0; i<56; i++) {
@@ -42,6 +43,17 @@ async function getNumbers() {
     }
 }
 
+//get date
+$.ajax({
+    url : "https://api.covidtracking.com/v1/states/ca/daily.json",
+    success : function(result){
+        lastUpdated = result[0].date.toString().substring(4,6) + "/" + result[0].date.toString().substring(6,8) + "/" + result[0].date.toString().substring(0,4);
+    },
+    async: false
+});
+var date = document.getElementById("date");
+date.innerHTML = lastUpdated;
+
 getNumbers().then(function() {
     for(var i=0; i<56;i++) {
         if((dailyCasesPer100k[i] >= 10) || (positivityRate[i] > 0.10)) {
@@ -63,7 +75,6 @@ getNumbers().then(function() {
         cell2.innerHTML = dailyCasesPer100k[i];
         cell3.innerHTML = positivityRate[i];
         //set red or green
-        console.log(needToQuarantine[i])
         if(needToQuarantine[i] == true) {
             row.classList.add("red");
         }
